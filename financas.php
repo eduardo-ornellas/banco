@@ -31,11 +31,14 @@ function sacar($conta, $valorSacado) {
 
 // função para depositar dinheiro
 function depositar($conta, $valorDepositado) {
+    if ($valorDepositado > 0) {
         $conta['saldo'] += $valorDepositado;
-        return $conta;
+    } else {
+        echo "Você não pode depositar valor negativo".PHP_EOL;
+    }  return $conta;
     } 
 
-$contasCorrentes['070.524.709-00'] = depositar($contasCorrentes['070.524.709-00'], $valorDepositado = 50000);  // script para depositar dinheiro
+$contasCorrentes['070.524.709-00'] = depositar($contasCorrentes['070.524.709-00'], $valorDepositado = -30000);  // script para depositar dinheiro
 
 // $contasCorrentes['070.524.709-00'] = sacar($contasCorrentes['070.524.709-00'], $valorSacado = 50000);  // script para sacar dinheiro
 
